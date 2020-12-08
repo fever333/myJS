@@ -1,46 +1,53 @@
-const name = validateStringInput('Как тебя зовут?')
-const surName = validateStringInput('Какая у тебя фамилия')
-const lastName = validateStringInput('Какое твоё отчество')
-const age = validateNumberInput('Сколько тебе лет?')
-let gender = confirm('Твой пол мужской?')  ? 'Мужской' : 'Женский'
-let pensionForm
+let name;
+do {
+    name = prompt('Твое имя?');
+} while (name === "" || name === null || !isNaN(+name))
 
 
 
-function validateStringInput(message) {
-    let string;
-    do {
-    string = prompt(message);
-    } while (string === "" || string === null || !isNaN(+string));
-
-    return string;
-}
-
-function validateNumberInput(message) {
-    let num;
-    do {
-    num = prompt(message);
-    } while (num === "" || num === null || isNaN(+num));
-
-    return num;
-}
+// const name = validateStringInput('Как тебя зовут?')
+// const surName = validateStringInput('Какая у тебя фамилия')
+// const lastName = validateStringInput('Какое твоё отчество')
+// const age = validateNumberInput('Сколько тебе лет?')
+// let gender = confirm('Твой пол мужской?')  ? 'Мужской' : 'Женский'
+// let pensionForm
 
 
-if((age >= 65 && gender === 'Мужской') || (age >= 55 && gender === 'Женский')) {
-    pensionForm = 'Да'
-} else pensionForm = 'Нет'
+
+// function validateStringInput(message) {
+//     let string;
+//     do {
+//     string = prompt(message);
+//     } while (string === "" || string === null || !isNaN(+string));
+
+//     return string;
+// }
+
+// function validateNumberInput(message) {
+//     let num;
+//     do {
+//     num = prompt(message);
+//     } while (num === "" || num === null || isNaN(+num));
+
+//     return num;
+// }
 
 
-alert(`
-Имя: ${name}
-Фамилия: ${surName}
-Отчество: ${lastName}
-Твой возраст в годах: ${age}
-Твой возраст в днях: ${age * 365}
-Твой возраст через 5 лет ${age + 5}
-Твой пол: ${gender}
-Вы на пенсии: ${pensionForm}
-`)
+// if((age >= 65 && gender === 'Мужской') || (age >= 55 && gender === 'Женский')) {
+//     pensionForm = 'Да'
+// } else pensionForm = 'Нет'
+
+
+// alert(`
+// Имя: ${name}
+// Фамилия: ${surName}
+// Отчество: ${lastName}
+// Твой возраст в годах: ${age}
+// Твой возраст в днях: ${age * 365}
+// Твой возраст через 5 лет ${age + 5}
+// Твой пол: ${gender}
+// Вы на пенсии: ${pensionForm}
+// `)
 
 
 

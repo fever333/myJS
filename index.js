@@ -1,3 +1,122 @@
+const app = () => {
+const firstName = createMessage('Name?')
+const surName = createMessage('Surname')
+const lastName = createMessage('Lastname?')
+const age = +createMessage('age?')
+const gender = validateGender('Man or Wooman?')
+
+function createMessage( message,validateToString) {
+  let num
+  validateToString()
+  function validateToString() {
+    do {
+      num = prompt(message)
+    } while(num === null || num === '' || num === !isNaN(+num)) 
+  }
+  return num
+}
+function validateGender(manOrWooman) {
+  let num 
+  if(num => 65 && num === true) {
+
+  }
+  num = confirm(manOrWooman) ? 'Мужчина' : 'Женщина'
+  
+  return num
+}
+function anketa() { 
+  alert(`
+  Name: ${firstName}
+  Surname: ${surName}
+  Lastname: ${lastName}
+  Age: ${age}
+  Age after five year: ${age + 5}
+  Age in days: ${age * 365}
+  Gender: ${gender}
+  `)
+}
+anketa()
+}
+app()
+
+// function sayHi() {
+//   console.log('Всем привет')
+// }
+
+// sayHi()
+
+
+// let userName = 'Вася';
+
+// function showMessage() {
+//   userName = 'Петя';
+
+//   let message = 'Привет,' + userName;
+
+
+//   console.log(message)
+// }
+// console.log(userName);
+// showMessage()
+// console.log(userName)
+
+// function showMessage(from,text) {
+//   console.log(from,text)
+//   console.log(from + ':' + text); 
+// }
+
+// showMessage('Аня','Привет');
+// showMessage('Аня','Как дела?')
+
+// function showMessage(from,text = 'текст не добавлен') {
+//   console.log(from + ':' + text)
+// }
+
+// showMessage('Аня')
+
+// function sum(a,b) {
+//   return a + b;
+// }
+
+// let result = sum(1,2);
+// console.log(result)
+
+
+// function sum(a,b) {
+//   return a + b;
+// }
+
+// let sum = (a,b) => {
+//   return a + b;
+// }
+
+
+
+// let user = {
+//   name: "Иван",
+//   age: 30
+// };
+
+// let clone = {}; // новый пустой объект
+
+// скопируем все свойства user в него
+// for (let key in user) {
+//   clone[key] = user[key];
+// }
+
+ // теперь в переменной clone находится абсолютно независимый клон объекта
+// clone.name = "Пётр"; // изменим в нём данные
+
+// console.log(user);
+// console.log(clone)
+
+// let user = [{name:'Иван'},{age:30}];
+// for(let key of user) {
+//   console.log(key)
+// }
+
+
+
 // let name;
 // do {
 //     name = prompt('Твое имя?');
@@ -221,44 +340,44 @@
 
 
 
-let data = [ 
+// let data = [ 
   
   
-    {
-      firstName: "Ashton",
-      lastName: "Kutcher",
-      age: 40,
-    },
-    {
-      firstName: "Bradley",
-      lastName: "Pitt",
-      age: 54,
-    },
-    {
-      firstName: "Hannah",
-      lastName: "Dakota",
-      age: 24,
-    },
+//     {
+//       firstName: "Ashton",
+//       lastName: "Kutcher",
+//       age: 40,
+//     },
+//     {
+//       firstName: "Bradley",
+//       lastName: "Pitt",
+//       age: 54,
+//     },
+//     {
+//       firstName: "Hannah",
+//       lastName: "Dakota",
+//       age: 24,
+//     },
     
-  ];
+//   ];
 
   
 
-  const firstName = prompt('fisrtName?');
+//   const firstName = prompt('fisrtName?');
 
-  let flag = true;
+//   let flag = true;
 
-  for( let index = 0; index < data.length; index++) {  
-    if(data[index].firstName.toLowerCase() === firstName.toLowerCase()) {
-        alert(firstName)
-        flag = false
+//   for( let index = 0; index < data.length; index++) {  
+//     if(data[index].firstName.toLowerCase() === firstName.toLowerCase()) {
+//         alert(firstName)
+//         flag = false
     
-    } 
-  }
+//     } 
+//   }
 
-if(flag) {
-    alert('Error')
-}
+// if(flag) {
+//     alert('Error')
+// }
 // debugger;
 
 

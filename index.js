@@ -1,43 +1,107 @@
 const app = () => {
-const firstName = createMessage('Name?')
-const surName = createMessage('Surname')
-const lastName = createMessage('Lastname?')
-const age = +createMessage('age?')
-const gender = validateGender('Man or Wooman?')
+const firstName = createMessageString('Name?')
+const surName = createMessageString('Surname?')
+const lastName = createMessageString('Lastname?')
+const age = +createMessageNumber('Age?')
+let gender = confirm('Man or Wooman?') ? 'Man' : 'Wooman'
+let ageInDays = 365
+let pensionForm
 
-function createMessage( message,validateToString) {
-  let num
-  validateToString()
-  function validateToString() {
-    do {
-      num = prompt(message)
-    } while(num === null || num === '' || num === !isNaN(+num)) 
-  }
+if(gender === 'Man' && age >= 65) {
+  pensionForm = 'Yes'
+} else if(gender === 'Wooman' && age >= 55) {
+  pensionForm = 'Yes'
+} else {
+  pensionForm = 'No'
+}
+anketa(firstName,lastName,surName,age,ageInDays,gender,pensionForm)
+
+}
+
+
+function createMessageString(message) {
+  let string;
+  do {
+    string = prompt(message)
+  } while (string === '' || string === null || !isNaN(+string))
+  return string
+}
+
+function createMessageNumber(message) {
+  let num;
+  do {
+    num = prompt(message)
+  } while (num === '' || num === null || isNaN(+num))
   return num
 }
-function validateGender(manOrWooman) {
-  let num 
-  if(num => 65 && num === true) {
 
-  }
-  num = confirm(manOrWooman) ? 'Мужчина' : 'Женщина'
-  
-  return num
-}
-function anketa() { 
+
+function anketa(firstName,lastName,surName,age,ageInDays,gender,pensionForm) {
   alert(`
   Name: ${firstName}
-  Surname: ${surName}
+  surName: ${surName}
   Lastname: ${lastName}
-  Age: ${age}
-  Age after five year: ${age + 5}
-  Age in days: ${age * 365}
   Gender: ${gender}
+  Age: ${age}
+  Age in years ${age + 5}
+  Age in days ${+age * ageInDays}
+  Retired: ${pensionForm}
   `)
 }
-anketa()
-}
+
 app()
+// обязательно спросить
+// while(num === ''|| num === null || !isNaN(+num)) // Валидация на число работает
+// while(num === ''|| num === null || num === !isNaN(+num)) // Валидация на число не работает
+
+
+// function createMessage( message,validateToString) {
+//   let num
+//   validateToString()
+//   function validateToString() {
+//     do {
+//       num = prompt(message)
+//     } while(num === null || num === '' || num === !isNaN(+num)) 
+//   }
+//   return num
+// }
+// function validateGender(manOrWooman) {
+//   let num 
+//   if(num => 65 && num === true) {
+
+//   }
+//   num = confirm(manOrWooman) ? 'Мужчина' : 'Женщина'
+  
+//   return num
+// }
+// function anketa() { 
+//   alert(`
+//   Name: ${message}
+//   Surname: ${messagee}
+//   Lastname: ${message}
+//   Age: ${message}
+//   Age after five year: ${message + 5}
+//   Age in days: ${message * 365}
+//   Gender: ${message}
+//   `)
+// }
+// anketa()
+
+
+// do {
+//   string = prompt(message);
+// } while (string === "" || string === null || !isNaN(+string));
+// return string;
+
+// const app = (message,func) => {
+//   message = createMessage('Name?')
+//   message = createMessage('Surname')
+//   message = createMessage('Lastname?')
+//   message = +createMessage('age?')
+//   message = validateGender('Man or Wooman?')
+//   anketa()
+//   }
+
 
 // function sayHi() {
 //   console.log('Всем привет')
